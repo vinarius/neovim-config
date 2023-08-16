@@ -33,3 +33,4 @@ vim.opt.colorcolumn = "80"
 -- run the :Prettier command on save
 vim.cmd [[autocmd BufWritePre * :Prettier]]
 vim.cmd [[set cursorline]]
+vim.vmf [[set colorcolumn=]]

@@ -19,15 +19,15 @@ lsp.configure('lua_ls', {
     }
 })
 
-lsp.configure('rust_analyzer', {
-    settings = {
-        ["rust-analyzer"] = {
-            checkOnSave = {
-                command = "clippy"
-            }
-        }
-    }
-})
+-- lsp.configure('rust_analyzer', {
+--     settings = {
+--         ["rust-analyzer"] = {
+--             checkOnSave = {
+--                 command = "clippy"
+--             }
+--         }
+--     }
+-- })
 
 
 local cmp = require('cmp')

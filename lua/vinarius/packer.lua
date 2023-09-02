@@ -22,31 +22,13 @@ return require('packer').startup(function(use)
 	  end
   })
 
-  use {
-    'gmr458/dark_modern.nvim',
-    config = function()
-      require('dark_modern').setup({
-        cursorline = true,
-        transparent_background = true,
-        nvim_tree_darkero = true,
-        --
-        -- -- Enable transparent background
-        -- transparent = true,
-        --
-        -- -- Enable italic comment
-        -- italic_comments = true,
-        --
-        -- -- Disable nvim-tree background color
-        -- disable_nvimtree_bg = true,
-        --
-        -- -- Override colors (see ./lua/vscode/colors.lua)
-        -- color_overrides = {
-        --     vscLineNumber = '#FFFFFF',
-        -- },
-      })
-      vim.cmd('colorscheme dark_modern')
-    end
-  }
+  -- use {
+  --   'gmr458/dark_modern.nvim',
+  --   config = function()
+  --     require('dark_modern').setup()
+  --     vim.cmd('colorscheme dark_modern')
+  --   end
+  -- }
 
   use('github/copilot.vim') -- :Copilot setup
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -57,6 +39,14 @@ return require('packer').startup(function(use)
   use('ThePrimeagen/vim-be-good')
   use('m4xshen/autoclose.nvim')
   use('Mofiqul/vscode.nvim')
+  use {
+    'rust-lang/rust.vim',
+    ft = 'rust',
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end
+  }
+  use('simrat39/rust-tools.nvim')
 
   use {
     'numToStr/Comment.nvim',
@@ -68,7 +58,7 @@ return require('packer').startup(function(use)
   use {
     'prettier/vim-prettier',
     run = 'npm i',
-    -- ft = {'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'yaml', 'html'},
+    ft = {'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'yaml', 'html'},
   }
 
   use {

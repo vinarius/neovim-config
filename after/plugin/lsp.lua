@@ -19,17 +19,6 @@ lsp.configure('lua_ls', {
     }
 })
 
--- lsp.configure('rust_analyzer', {
---     settings = {
---         ["rust-analyzer"] = {
---             checkOnSave = {
---                 command = "clippy"
---             }
---         }
---     }
--- })
-
-
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({

@@ -32,5 +32,11 @@ vim.opt.colorcolumn = "80"
 
 -- run the :Prettier command on save
 -- vim.cmd [[autocmd BufWritePre * :Prettier]]
-vim.cmd [[set cursorline]]
+-- vim.cmd [[set cursorline]]
 vim.cmd [[set colorcolumn=]]
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
+  command = 'silent! EslintFixAll',
+  group = vim.api.nvim_create_augroup('MyAutocmdsJavaScripFormatting', {}),
+})

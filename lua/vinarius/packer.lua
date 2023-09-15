@@ -61,6 +61,7 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   }
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
   -- use {
   --   'prettier/vim-prettier',

@@ -31,6 +31,10 @@ return require('packer').startup(function(use)
   -- }
 
   use('github/copilot.vim')
+  -- git clone https://github.com/github/copilot.vim.git \
+  --  ~/.config/nvim/pack/github/start/copilot.vim
+  --  :Copilot setup
+
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')

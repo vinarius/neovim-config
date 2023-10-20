@@ -22,19 +22,17 @@ return require('packer').startup(function(use)
     end
   })
 
-  -- use {
-  --   'gmr458/dark_modern.nvim',
-  --   config = function()
-  --     require('dark_modern').setup()
-  --     vim.cmd('colorscheme dark_modern')
-  --   end
-  -- }
-
   use('github/copilot.vim')
   -- git clone https://github.com/github/copilot.vim.git \
   --  ~/.config/nvim/pack/github/start/copilot.vim
   --  :Copilot setup
 
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
+  }
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')

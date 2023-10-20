@@ -71,33 +71,6 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-
-  if client.name == 'rust_analyzer' then
-    local rt = require("rust-tools")
-
-    rt.setup {
-      server = {
-        on_attach = function(_, bufnr2)
-          -- Hover actions
-          vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr2 })
-          -- Code action groups
-          vim.keymap.set("n", "<Leader>.", rt.code_action_group.code_action_group, { buffer = bufnr2 })
-        end,
-      },
-      tools = {
-        autoSetHints = true,
-        runnables = {
-          use_telescope = true,
-        },
-        inlay_hints = {
-          show_parameter_hints = true,
-          parameter_hints_prefix = " » ",
-          other_hints_prefix = " » ",
-        },
-      },
-    }
-  end
-
 end)
 
 lsp.setup()
